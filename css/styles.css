@@ -12,13 +12,20 @@ body {
   width: 80%;
   line-height: .5;
 }
+#author-box {
+  position: abosolute;
+  text-align: right;
+  margin: 5em auto;
+  padding: 0;
+  line-height: .5;
+}
 .quote {
   font-size: 4rem;
   font-weight: 400;
   line-height: 1.1;
   position: relative;
   margin: 0;
-  } 
+  }
 .quote:before, .quote:after {
   font-size: 6rem;
   line-height: 2.5rem;
@@ -47,14 +54,62 @@ body {
 }
 .citation {
   font-style: italic;
+  text-align: right;
 }
-.citation:before {
+/*.citation:before {
   content: ", ";
   font-style: normal;
-}
+}*/
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.category {
+  font-style: italic;
+}
+
+.category:before {
+  content: " : ";
+  font-style: normal;
+}
+
+.profession {
+  text-align: right;
+  margin-right: 5em;
+  letter-spacing: .05em;
+  height: 1em;
+}
+.profession:before {
+  content: "profession: ";
+  font-style: normal;
+  padding-left: 1em;
+  font-size: .8em;
+}
+
+.born {
+  text-align: right;
+  margin-right: 5em;
+  letter-spacing: .05em;
+  height: 1em;
+}
+.born:before {
+  content: "born: ";
+  font-style: normal;
+  padding-left: 1em;
+  font-size: .8em;
+}
+.death {
+  text-align: right;
+  margin-right: 5em;
+  letter-spacing: .05em;
+  height: 1em;
+}
+.death:before {
+  content: "died: ";
+  font-style: normal;
+  padding-left: 1em;
+  font-size: .8em;
 }
 
 #loadQuote {
