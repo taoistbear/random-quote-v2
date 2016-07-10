@@ -11,11 +11,11 @@ var quotes = [
     quote: 'Life is a series of natural and spontaneous changes. Don\'t resist them - that only creates sorrow. Let reality be reality. Let things flow naturally forward in whatever way they like.',
     source: 'Lao Tzu',
     citation: 'Tao Te Ching',
-    year: 'cica 4th century BC',
+    year: 'cica 4th century B.C.E.',
     profession: 'Philosopher',
-    birthYear: '601 BC',
+    birthYear: '601 B.C.E.',
     born: 'China',
-    deathYear: '531 Bc',
+    deathYear: '531 B.C.E.',
     category: 'Life'
   },
   {
@@ -40,6 +40,72 @@ var quotes = [
     deathYear: 1950,
     category: 'Life'
   },
+  {
+    quote: 'Imagination will often carry us to worlds that never were. But without it we go nowhere',
+    source: 'Carl Sagan',
+    citation: 'Cosmos',
+    year: 1980,
+    profession: 'Scientist',
+    birthYear: 1934,
+    born: 'United States',
+    deathYear: 1996,
+    category: 'Imagination'
+  },
+  {
+    quote: 'Nonsense wakes up the brain cells. And it helps develop a sense of humor, which is awfully important in this day and age. Humor has a tremendous place in this sordid world. It\'s more than just a matter of laughing.',
+    source: 'Dr. Seuss',
+    citation: 'Author Isn\'t Just a Cat in the Hat: The Los Angeles Times',
+    year: 1983,
+    profession: 'Author',
+    birthYear: 1904,
+    born: 'United States',
+    deathYear: 1991,
+    category: 'Imagination'
+  },
+  {
+    quote: 'They who dream by day are cognizant of many things which escape those who dream only by night.',
+    source: 'Edgar Allen Poe',
+    citation: 'Eleonora',
+    year: 1841,
+    profession: 'Poet',
+    birthYear: 1809,
+    born: 'United States',
+    deathYear: 1849,
+    category: 'Imagination'
+  },
+  {
+    quote: 'No man ever steps in the same river twice, for it\'s not the same river and he\'s not the same man.',
+    source: 'Heraclitus',
+    citation: 'as quoted by Plato in Cratylus',
+    year: 'circa 360 B.C.E.',
+    profession: 'Philosopher',
+    birthYear: '544 B.C.E.',
+    born: 'Greece',
+    deathYear: '483 B.C.E.',
+    category: 'Experience'
+  },
+  {
+    quote: 'Be brave. Take risks. Nothing can substitute experience.',
+    source: 'Paulo Coelho',
+    citation: 'The Alchemist',
+    year: 1988,
+    profession: 'Novelist',
+    birthYear: 1947,
+    born: 'Brazil',
+    deathYear: '',
+    category: 'Experience'
+  },
+  {
+    quote: 'We shall not grow wiser before we learn that much that we have done was very foolish.',
+    source: 'Friedrich August von Hayek',
+    citation: 'The Road to Serfdom',
+    year: 1944,
+    profession: 'Economist',
+    birthYear: 1899,
+    born: 'Austria',
+    deathYear: 1992,
+    category: 'Experience'
+  }
 ];
 
 
