@@ -120,33 +120,66 @@ function getRandomQuote() {
   return randomQuote;
 }
 
+// SET UP FUNCTION TO RANDOMLY GENERATE BACKGROUND-COLOR
+function randomColor() {
+  // set Math.random to generate colors dark enough not to mess with white font of quote
+  // I chose 176 to keep the potential for bright colors from randomly being generated
+  // keeps consistency of white font without hapening readability
+  var rgbValue = Math.floor((Math.random() * 176))
+  return rgbValue;
+}
+
 
 // SET UP printQuote FUNCTION FOR EVENT LISTENER
 function printQuote() {
+  // save reference to quote element in a variable
   var quoteSpace = document.getElementById('quote-box');
+  // set random quote in variable
   var newQuote = getRandomQuote();
+  // start writing the html for quote based on avilable properties of array values
   var quoteHTML = '<p class="quote">' + newQuote.quote + '</p>';
   quoteHTML += '<p class="source">' + newQuote.source + '</p>';
-  if (newQuote.citation !== '') {
+  // set truthy statement to set citaion if available
+  if (newQuote.citation) {
     quoteHTML += '<span class="citation">' + newQuote.citation + '</span>';
   }
-  if (newQuote.year !== '') {
+  // set truthy statement for year if available
+  if (newQuote.year) {
     quoteHTML += '<span class="year">' + newQuote.year + '</span>';
   }
-  if (newQuote.category !== '') {
+  // set truthy statement for category if available
+  if (newQuote.category) {
     quoteHTML += '<span class="category">' + newQuote.category + '</span>';
   }
-  if (newQuote.profession !== '') {
+  // set truthy statement for professionif available creating a new author box to control css
+  if (newQuote.profession) {
     quoteHTML += '<div class="author-box"><p class="profession">' + newQuote.profession + '</p>';
   }
-  if (newQuote.birthYear !== '' && newQuote.born !== '') {
+  // set truthy statement for birth year and country if available included together intentionally
+  if (newQuote.birthYear && newQuote.born) {
     quoteHTML += '<p class="born">' + newQuote.birthYear + ' in ' + newQuote.born + '<p>';
   }
-  if (newQuote.deathYear !== '') {
+  // set truthy statement for year of death.. kept separate from birth due to authors still living
+  if (newQuote.deathYear) {
     quoteHTML += '<p class="death">' + newQuote.deathYear + '</p>';
   }
-quoteHTML += '</div>'
+  // end <div> for my athor box
+ quoteHTML += '</div>'
+  // write completed html to page via innerHTML
   document.getElementById('quote-box').innerHTML = quoteHTML;
+  // setting random background-color
+  // seting r value
+  var rValue = randomColor();
+  // setting g value
+  var gValue = randomColor();
+  // setting b value
+  var bValue = randomColor();
+  // compile the color into a new rgbaValue
+  var newColor = 'rgba(' + rValue + ',' + gValue + ',' + bValue + ', 1)';
+  // set the background to  new color
+  $('#body').css('background-color', newColor);
+  // set the loadQuote button to the same color for consistency
+  $('#loadQuote').css('background-color', newColor);
 }
 
-// DON'T FORGET ABOUT THE EXTRA CREDIT
+setInterval(printQuote, 15000);

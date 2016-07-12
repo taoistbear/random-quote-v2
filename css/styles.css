@@ -1,11 +1,23 @@
+* {
+  border: solid red 1px;
+}
+/* Main Styles for Constant Elements */
+
 body {
-  /*text-align: center;*/
   background-color: #36b55c;
   color: white;
   font-family: 'Playfair Display', serif;
 }
+
+.container {
+  height: auto;
+  width: 85%;
+  margin: 5em auto;
+}
+
 #quote-box {
-  position: absolute;
+  display: block;
+  margin: auto;
   top: 20%;
   left: 10%;
   right: 10%;
@@ -13,12 +25,32 @@ body {
   line-height: .5;
 }
 #author-box {
-  position: abosolute;
   text-align: right;
-  margin: 5em auto;
+  margin: auto;
   padding: 0;
   line-height: .5;
 }
+
+#loadQuote {
+  width: 12em;
+  display: block;
+  left: 50%;
+  margin: auto;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #36b55c;
+  padding: 15px 0;
+  transition: .5s ;
+}
+#loadQuote:hover {
+  background-color: rgba(255,255,255,.25);
+}
+#loadQuote:focus {
+  outline: none;
+}
+/* styes for ramdon quote elements */
+
 .quote {
   font-size: 4rem;
   font-weight: 400;
@@ -43,7 +75,7 @@ body {
   position: absolute;
 }
 .source {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: right;
@@ -56,10 +88,11 @@ body {
   font-style: italic;
   text-align: right;
 }
-/*.citation:before {
-  content: ", ";
-  font-style: normal;
-}*/
+
+.year {
+  text-align: right;
+}
+
 .year:before {
   content: ", ";
   font-style: normal;
@@ -67,6 +100,7 @@ body {
 
 .category {
   font-style: italic;
+  text-align: right;
 }
 
 .category:before {
@@ -112,26 +146,7 @@ body {
   font-size: .8em;
 }
 
-#loadQuote {
-  position: fixed;
-  width: 12em;
-  display: inline-block;
-  left: 50%;
-  margin-left: -6em;
-  bottom: 150px;
-  border-radius: 4px;
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: #36b55c;
-  padding: 15px 0;
-  transition: .5s ;
-}
-#loadQuote:hover {
-  background-color: rgba(255,255,255,.25);
-}
-#loadQuote:focus {
-  outline: none;
-}
+/* media query */
 
 @media (max-width: 420px) {
   .quote {
