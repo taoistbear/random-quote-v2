@@ -107,6 +107,7 @@ var quotes = [
   //   category: 'Experience'
   // }
 ];
+
 // set empty array to store used quotes
 var usedQuotes = [];
 
@@ -115,7 +116,7 @@ function getRandomQuote() {
     // check to see if both quote arrays are equal.  if they are then empty usedQuote array
       // to start another cycle
     if (quotes === usedQuotes) {
-      usedQuotes = [];
+      usedQuotes.length = 0;
     }
   // get index number by mulitplying the random number by quote length
     // keeping it flexible and easily updatable by using the quote.length property
