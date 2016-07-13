@@ -108,7 +108,7 @@ var quotes = [
   // }
 ];
 // set empty array to store used quotes
-var usedQuotes;
+var usedQuotes = [];
 
 // SET UP FUNCTION TO RAMDONLY SELECT QUOTES
 function getRandomQuote() {
