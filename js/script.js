@@ -113,18 +113,19 @@ var usedQuotes = [];
 
 // SET UP FUNCTION TO RAMDONLY SELECT QUOTES
 function getRandomQuote() {
-    // check to see if both quote arrays are equal.  if they are then empty usedQuote array
-      // to start another cycle
-    if (quotes === usedQuotes) {
-      usedQuotes.length = 0;
-    }
+  // check to see if both quote arrays are equal.  if they are then empty usedQuote array
+    // to start another cycle
+  if (usedQuotes === quotes) {
+    usedQuotes.splice(0);
+  }
   // get index number by mulitplying the random number by quote length
     // keeping it flexible and easily updatable by using the quote.length property
   var quoteIndex = Math.floor(Math.random() * quotes.length)
   // check to see if quote has already been use
-  while (usedQuotes[quoteIndex]) {
+  while (quotes !== usedQuotes && quotes[quoteIndex] === usedQuotes[quoteIndex]) {
     var quoteIndex = Math.floor(Math.random() * quotes.length)
   }
+
   // set a variable to hold the random quote
   var randomQuote = quotes[quoteIndex];
   // fill empty array with quote alrady generated
@@ -195,4 +196,4 @@ function printQuote() {
   $('#loadQuote').css('background-color', newColor);
 }
 
-setInterval(printQuote, 15000);
+// setInterval(printQuote, 15000);
