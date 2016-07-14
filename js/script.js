@@ -8,7 +8,13 @@ document.getElementById('loadSlideshow').addEventListener('click', startSlide, f
 // set up third button to stop slideshow and immeidately hide the button
 document.getElementById('stopSlideshow').addEventListener('click', stopSlide, false);
 
-$('#stopSlideshow').hide();
+// set up third button to stop slideshow and immeidately hide the button
+document.getElementById('slowSlideshow').addEventListener('click', slowSlide, false);
+
+// set up third button to stop slideshow and immeidately hide the button
+document.getElementById('speedSlideshow').addEventListener('click', speedSlide, false);
+
+$('#controls').hide();
 
 // SET UP quotes ARRAY TO HOLD OBJECTS TO BE FILLED IN WITH QUOTES
 //// This will make it easy to access a randomized [i].property to fill the page with a
@@ -120,8 +126,10 @@ var quotes = [
 var usedQuotes = [];
 
 // set up variable to hold reference to the interval start
-
 var showStart;
+
+// set up variable to hold interval time for slide showStart
+var slideInt = 10000;
 
 // SET UP FUNCTION TO RAMDONLY SELECT QUOTES
 function getRandomQuote() {
@@ -217,33 +225,58 @@ function printQuote() {
 function startSlide() {
 
   // set up interval stored in a variable to reference
-  showStart = setInterval(printQuote, 2000);
+  showStart = setInterval(printQuote, slideInt);
 
-  // hide loadQuote button
-  $('#loadQuote').hide();
+  // hide quoteButtons
+  $('#quoteButtons').hide();
 
-  // hide startSlide button
-  $('#loadSlideshow').hide();
-
-  // show stopSlide button
-  $('#stopSlideshow').show();
+  // show slideshow controls
+  $('#controls').show();
 
   // change quote initially to kick the ball rolling
   printQuote();
 
 }
 
+// set up function to stop the slideshow
 function stopSlide() {
 
-  // show loadQuote button
-  $('#loadQuote').show();
+  // show quoteButtons
+  $('#quoteButtons').show();
 
-  // show startSlide button
-  $('#loadSlideshow').show();
-
-  // hide stopSlide button
-  $('#stopSlideshow').hide();
+  // hide slideshow controls
+  $('#controls').hide();
 
   // stop the slideshow
   clearInterval(showStart);
+}
+
+// set function to reset the slideshow speed
+function resetSpeed() {
+  clearInterval(showStart);
+  showStart = setInterval(printQuote, slideInt);
+}
+
+// set up function to slow the slide show
+function slowSlide() {
+  // check to see if speed is already too slow (60 seconds) if so then don't slow it further.. if not slow it down by 2.5 seconds
+  if (slideInt >= 60000) {
+    slideInt = 60000;
+    resetSpeed();
+  } else {
+    slideInt = slideInt + 2500;
+    resetSpeed();
+  }
+}
+
+// set up function to speed up the slide show
+function speedSlide() {
+  // check to see if speed is already too fast (5 seconds) if so then don't speed it further.. if not speed it up by 2.5 seconds
+  if (slideInt <= 2500) {
+    slideInt = 2500;
+    resetSpeed();
+  } else {
+    slideInt = slideInt - 2500;
+    resetSpeed();
+  }
 }

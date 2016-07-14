@@ -52,8 +52,21 @@ body {
   margin-left: 10em;
 }
 
-#stopSlideshow {
+#slowSlideshow {
+  display: inline-block;
+  float: left;
+  margin-left: 5em;
+}
 
+#stopSlideshow {
+  display: inline-block;
+  margin: 5em auto;
+}
+
+#speedSlideshow {
+  display: inline-block;
+  float: right;
+  margin-right: 5em;
 }
 
 #loadSlideshow {
