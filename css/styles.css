@@ -28,11 +28,11 @@ body {
   line-height: .5;
 }
 
-#loadQuote {
+.buttons {
   width: 12em;
   display: block;
   left: 50%;
-  margin: auto;
+  margin: 5em auto;
   border-radius: 15px;
   border: 2px solid #fff;
   color: #fff;
@@ -40,11 +40,25 @@ body {
   padding: 15px 0;
   transition: .5s ;
 }
-#loadQuote:hover {
+.buttons:hover {
   background-color: rgba(255,255,255,.25);
 }
-#loadQuote:focus {
+.buttons:focus {
   outline: none;
+}
+
+#loadQuote {
+  float: left;
+  margin-left: 10em;
+}
+
+#stopSlideshow {
+
+}
+
+#loadSlideshow {
+  float: right;
+  margin-right: 10em;
 }
 /* styes for ramdon quote elements */
 

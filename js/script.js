@@ -1,6 +1,14 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener('click', printQuote, false);
+
+// set up second button to start slideshow
+document.getElementById('loadSlideshow').addEventListener('click', startSlide, false);
+
+// set up third button to stop slideshow and immeidately hide the button
+document.getElementById('stopSlideshow').addEventListener('click', stopSlide, false);
+
+$('#stopSlideshow').hide();
 
 // SET UP quotes ARRAY TO HOLD OBJECTS TO BE FILLED IN WITH QUOTES
 //// This will make it easy to access a randomized [i].property to fill the page with a
@@ -111,6 +119,10 @@ var quotes = [
 // set empty array to store used quotes
 var usedQuotes = [];
 
+// set up variable to hold reference to the interval start
+
+var showStart;
+
 // SET UP FUNCTION TO RAMDONLY SELECT QUOTES
 function getRandomQuote() {
 
@@ -132,10 +144,6 @@ function getRandomQuote() {
     quotes = usedQuotes;
     usedQuotes = [];
   }
-
-  console.log('used quote array length: ' + usedQuotes.length);
-  console.log('quote array length: ' + quotes.length);
-
 
   // return the random quote
   return randomQuote;
@@ -200,7 +208,42 @@ function printQuote() {
   // set the background to  new color
   $('#body').css('background-color', newColor);
   // set the loadQuote button to the same color for consistency
-  $('#loadQuote').css('background-color', newColor);
+  $('.buttons').css('background-color', newColor);
 }
 
-// setInterval(printQuote, 15000);
+
+
+// Set up slideshow function
+function startSlide() {
+
+  // set up interval stored in a variable to reference
+  showStart = setInterval(printQuote, 2000);
+
+  // hide loadQuote button
+  $('#loadQuote').hide();
+
+  // hide startSlide button
+  $('#loadSlideshow').hide();
+
+  // show stopSlide button
+  $('#stopSlideshow').show();
+
+  // change quote initially to kick the ball rolling
+  printQuote();
+
+}
+
+function stopSlide() {
+
+  // show loadQuote button
+  $('#loadQuote').show();
+
+  // show startSlide button
+  $('#loadSlideshow').show();
+
+  // hide stopSlide button
+  $('#stopSlideshow').hide();
+
+  // stop the slideshow
+  clearInterval(showStart);
+}
