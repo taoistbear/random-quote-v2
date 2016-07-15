@@ -125,6 +125,7 @@ body {
 .source:before {
   content: "—";
 }
+
 .citation {
   font-style: italic;
   text-align: right;
